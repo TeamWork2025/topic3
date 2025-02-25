@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <h1 class="logo">Topic</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse Topics</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2 class="tt">Discover. Learn. Enjoy</h2>
+        <p class="pp">Platform for creatives around the world</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Search topics...">
+            <button>Search</button>
+        </div>
+    </section>
+
+    <!-- Browse Topics -->
+    <section class="topics">
+    <h2>Browse Topics</h2>
+    <div class="grid">
+        <!-- Web Design Card -->
+        <div class="card">
+            <h3>Web Design</h3>
+            <img src="image1.png" alt="Web Design">
+            <p>Learn the basics of web design and create your own website</p>
+        </div>
+
+        <!-- Graphic Design Card -->
+        <div class="card">
+            <h3>Graphic</h3>
+            <img src="image2.png" alt="Graphic Design">
+            <p>Explore the world of graphic design and create stunning visuals</p>
+        </div>
+
+        <!-- Logo Design Card -->
+        <div class="card">
+            <h3>Logo Design</h3>
+            <img src="image3.png" alt="Logo Design">
+            <p>Learn how to design a logo and create a brand identity</p>
+        </div>
+    </div>
+</section>
+    
+
+    <!-- FAQs -->
+    <section class="faqs container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-img">
+                    <img src="questions.avif" alt="Illustration">
+                </div>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="faq-content">
+                    <div class="faq">
+                        <button class="toggle-faq">What is Topic Listing? <span class="icon">+</span></button>
+                        <p class="faq-answer">Topic Listing is a free Bootstrap 5 CSS template. <b>You are not allowed to 
+                            redistribute this template</b> on any other template collection website 
+                            without permission. Please contact TemplateMo for more detail.
+                            Thank you.
+                    </p>
+                    </div>
+                    <div class="faq">
+                        <button class="toggle-faq">How to find a topic? <span class="icon">+</span></button>
+                        <p class="faq-answer">You can search using the search bar at the top.</p>
+                    </div>
+                    <div class="faq">
+                        <button class="toggle-faq">Does it need to be paid? <span class="icon">+</span></button>
+                        <p class="faq-answer">No, it is completely free to use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggles = document.querySelectorAll(".toggle-faq");
+    
+            toggles.forEach((toggle) => {
+                toggle.addEventListener("click", function () {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle("active");
+    
+                    // Change the "+" to "-" when expanded
+                    const icon = this.querySelector(".icon");
+                    if (answer.classList.contains("active")) {
+                        icon.textContent = "−";
+                    } else {
+                        icon.textContent = "+";
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="form1">
+        <h1 id="touch-header">Get in touch</h1>
+        <br>
+        <div class="touch">
+            <br>
+            <div class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100906.69455182791!2d-122.54112522369375!3d37.782206858725736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085876857369c5b%3A0xe894109bfda58342!2sSan%20Francisco%20Botanical%20Garden!5e0!3m2!1sen!2sza!4v1740399727116!5m2!1sen!2sza" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="park-map"></iframe>
+            </div>
+            <div class="head-office">
+                <h2>Head Office</h2>
+            
+                <p>Bay St &, Larkin St, San <br>Francisco, CA 94109, United<br>States<br></p>
+                <hr>
+                <p>Phone <a href="3052409671">305-240-9671</a><br><br>Email <a href="info@company.com">info@company.com</a> <br>
+            </div>
+            <div class="dubai">
+                <h2>Dubai Office</h2>
+                
+                <p>Burj Park, Downtown Dubai, <br>United Arab Emirates<br></p>
+                <hr>
+                <p>Phone <a href="1102203400">110-220-3400</a><br><br>Email <a href="info@company.com">info@company.com</a> <br></p>
+            </div>
+        </div>
+    </div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Topic Listing. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll(".toggle-faq").forEach(button => {
+            button.addEventListener("click", () => {
+                const answer = button.nextElementSibling;
+                answer.classList.toggle("active");
+                button.querySelector("span").textContent = answer.classList.contains("active") ? "-" : "+";
+            });
+        });
+    </script>
+
+</body>
+</html>
